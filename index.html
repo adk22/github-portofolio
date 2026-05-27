@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.9, maximum-scale=1.0"
+    />
+    <title>Portfolio Korsa</title>
+
+    <!-- ICON -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: #050505;
+        color: white;
+        overflow-x: hidden;
+        zoom: 90%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 50px;
+        color: #22d3ee;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(to bottom, #111827, #000000);
+      }
+
+      .profile-img {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #22d3ee;
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.5);
+      }
+
+      .hero h1 {
+        margin-top: 25px;
+        font-size: 50px;
+      }
+
+      .hero span {
+        color: #22d3ee;
+      }
+
+      .hero p {
+        margin-top: 18px;
+        max-width: 760px;
+        color: #cbd5e1;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .btn {
+        margin-top: 30px;
+        padding: 13px 30px;
+        background: #22d3ee;
+        color: black;
+        font-weight: bold;
+        border-radius: 15px;
+        transition: 0.3s;
+        font-size: 15px;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* SOCIAL */
+      .social-wrapper {
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .social-description {
+        color: #cbd5e1;
+        max-width: 700px;
+        margin: auto;
+        margin-bottom: 40px;
+        line-height: 1.8;
+        font-size: 16px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+
+      .social-icons a {
+        width: 80px;
+        height: 80px;
+        background: #ffffff;
+        border: 2px solid #1f2937;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 34px;
+        color: black;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        transform: translateY(-10px) scale(1.1);
+        border-color: #22d3ee;
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+        background: #22d3ee;
+      }
+
+      /* INFO */
+      .info-wrapper {
+        max-width: 1100px;
+        margin: 70px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        align-items: center;
+      }
+
+      .info-card {
+        width: 100%;
+        background: #111827;
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        border-radius: 25px;
+        padding: 30px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+      }
+
+      .info-card h3 {
+        font-size: 26px;
+        margin-bottom: 18px;
+        color: #22d3ee;
+      }
+
+      .info-card p {
+        color: #cbd5e1;
+        line-height: 1.8;
+        font-size: 16px;
+      }
+
+      /* MAGANG PHOTO */
+      .intern-gallery {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .intern-gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 2px solid rgba(34, 211, 238, 0.3);
+        transition: 0.3s;
+      }
+
+      .intern-gallery img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
+      }
+
+      /* MY WORK */
+      #work {
+        background: radial-gradient(
+          circle at top,
+          rgba(0, 140, 255, 0.3),
+          #020617 60%
+        );
+      }
+
+      /* VIDEO */
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .video-card {
+        width: 100%;
+        max-width: 260px;
+        margin: auto;
+        background: rgba(17, 24, 39, 0.9);
+        border-radius: 25px;
+        overflow: hidden;
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        transition: 0.4s;
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+      }
+
+      .video-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 35px rgba(34, 211, 238, 0.35);
+      }
+
+      .video-card video {
+        width: 100%;
+        height: 360px;
+        object-fit: contain;
+        background: black;
+      }
+
+      .video-content {
+        padding: 18px;
+        text-align: center;
+      }
+
+      .video-content h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .video-content p {
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      /* DESIGN */
+      .design-grid {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .design-card {
+        background: rgba(17, 24, 39, 0.9);
+        border-radius: 25px;
+        overflow: hidden;
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        transition: 0.3s;
+        text-align: center;
+      }
+
+      .design-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+      }
+
+      /* GAMBAR DESIGN PENUH */
+      .design-card img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .design-content {
+        padding: 22px;
+      }
+
+      .design-content h3 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      .design-content p {
+        color: #cbd5e1;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 25px;
+        text-align: center;
+        border-top: 1px solid #1f2937;
+        color: #94a3b8;
+        background: #0f172a;
+        font-size: 14px;
+      }
+
+      /* RESPONSIVE TABLET */
+      @media (max-width: 1000px) {
+        body {
+          zoom: 100%;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        .video-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .design-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* RESPONSIVE MOBILE */
+      @media (max-width: 768px) {
+        section {
+          padding: 70px 5%;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+
+        .hero h1 {
+          font-size: 34px;
+          line-height: 1.4;
+        }
+
+        .hero p {
+          font-size: 15px;
+        }
+
+        .profile-img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .section-title {
+          font-size: 30px;
+        }
+
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .video-card {
+          max-width: 100%;
+        }
+
+        .video-card video {
+          height: 300px;
+        }
+
+        .design-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .design-card img {
+          height: 350px;
+        }
+
+        .social-icons a {
+          width: 65px;
+          height: 65px;
+          font-size: 26px;
+        }
+
+        .info-card {
+          padding: 22px;
+        }
+
+        .info-card h3 {
+          font-size: 22px;
+        }
+
+        .info-card p {
+          font-size: 15px;
+        }
+
+        .intern-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* RESPONSIVE HP KECIL */
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero p {
+          font-size: 14px;
+        }
+
+        .btn {
+          padding: 12px 24px;
+          font-size: 14px;
+        }
+
+        .section-title {
+          font-size: 26px;
+        }
+
+        .design-card img {
+          height: 300px;
+        }
+
+        .video-card video {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <img class="profile-img" src="gambar/foto jass.jpeg" alt="Profile" />
+
+      <h1>Halo, Saya <span>I Dewa Gede Adi Korsa Paramartha</span></h1>
+
+      <p>
+        Saya adalah seorang content creator, designer, dan photographer yang
+        suka membuat desain visual kreatif, editing video, dan berbagai karya
+        digital menarik, serta masih ingin belajar untuk meningkatkan potensi
+        saya.
+      </p>
+
+      <a href="#work" class="btn">Lihat Karya Saya</a>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section>
+      <h2 class="section-title">Media Sosial</h2>
+
+      <div class="social-wrapper">
+        <p class="social-description">
+          Saya menggunakan beberapa media sosial untuk membagikan aktivitas,
+          karya desain, project video, serta konten kreatif lainnya.
+        </p>
+
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/adikorsa_02?igsh=bGNqcGx0bDdxajFr"
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.youtube.com/channel/UCoZ1V7fqGEvqBcm0Y1XqeLw"
+            target="_blank"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
+          <a href="https://tiktok.com" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+
+        <!-- MAGANG -->
+        <div class="info-wrapper">
+          <div class="info-card">
+            <h3>Magang di Branch Office Garuda Indonesia Denpasar</h3>
+
+            <p>
+              Saya pernah melaksanakan kegiatan magang di
+              <strong>Branch Office Garuda Indonesia Denpasar</strong>.
+            </p>
+
+            <div class="intern-gallery">
+              <img src="gambar/event 17 garuda.jpeg" alt="Magang 1" />
+              <img src="gambar/desain poster.jpeg" alt="Magang 2" />
+              <img src="gambar/event gatf.jpeg" alt="Magang 3" />
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Magang sebagai Photographer</h3>
+
+            <p>
+              Saya juga pernah melaksanakan kegiatan magang sebagai photographer
+              bersama teman saya pada event bernuansa budaya Bali. Dalam
+              kegiatan tersebut saya belajar mengenai teknik fotografi event,
+              pengambilan angle, dokumentasi kegiatan, serta editing hasil foto
+              agar terlihat lebih menarik dan profesional.
+            </p>
+
+            <div class="intern-gallery">
+              <img src="gambar/dokumentasi photographer.jpeg" alt="Magang 1" />
+
+              <img src="gambar/photographer magang.jpeg" alt="Magang 2" />
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Panitia Sie Dokumentasi Event JFest</h3>
+
+            <p>
+              Saya juga pernah menjadi bagian dari Sie Dokumentasi pada event
+              JFest, yaitu salah satu event dari UKM JCOS di ITB STIKOM Bali
+              yang bertema budaya Jepang. Pada kegiatan ini saya bertugas
+              mengambil dokumentasi foto, membantu mengabadikan momen acara,
+              serta mendukung publikasi visual selama event berlangsung.
+            </p>
+
+            <div class="intern-gallery">
+              <img src="gambar/fotographer 3.jpeg" alt="Dokumentasi 1" />
+
+              <img
+                src="gambar/nametag panitia dokum.jpeg"
+                alt="Dokumentasi 2"
+              />
+
+              <img src="gambar/foto bareng event.jpeg" alt="Dokumentasi 3" />
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Riwayat Pendidikan</h3>
+
+            <p>
+              • SD Negeri 5 Kawan (2011-2016) <br /><br />
+              • SMP Negeri 1 Bangli (2016-2018) <br /><br />
+              • SMA Negeri 1 Susut (2018-2020) <br /><br />
+              • ITB Stikom Bali (2021-2026)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY WORK -->
+    <section id="work">
+      <h2 class="section-title">My Work</h2>
+
+      <!-- VIDEO -->
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls>
+            <source src="video/pupuk organik cair.mp4" type="video/mp4" />
+          </video>
+
+          <div class="video-content">
+            <h3>Project Video 1</h3>
+            <p>Demo project pembuatan pupuk organik cair.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <video controls>
+            <source
+              src="https://www.w3schools.com/html/movie.mp4"
+              type="video/mp4"
+            />
+          </video>
+
+          <div class="video-content">
+            <h3>Project Video 2</h3>
+            <p>Hasil editing cinematic dan motion graphic kreatif.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <video controls>
+            <source
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              type="video/mp4"
+            />
+          </video>
+
+          <div class="video-content">
+            <h3>Project Video 3</h3>
+            <p>Video dokumentasi dan visual kreatif lainnya.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="design-grid">
+        <div class="design-card">
+          <img src="gambar/frame utama.jpg" alt="Desain 1" />
+
+          <div class="design-content">
+            <h3>Burger Poster Desain</h3>
+            <p>Latihan pembuatan poster promosi burger.</p>
+          </div>
+        </div>
+
+        <div class="design-card">
+          <img src="gambar/PARTY.jpg" alt="Desain 2" />
+
+          <div class="design-content">
+            <h3>Party Desain</h3>
+            <p>Latihan membuat poster acara party.</p>
+          </div>
+        </div>
+
+        <div class="design-card">
+          <img src="gambar/SPECIAL PROMO.png" alt="Desain 3" />
+
+          <div class="design-content">
+            <h3>Special Promo</h3>
+            <p>Latihan membuat desain promosi khusus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>© 2026 Korsa Portfolio Website. All Rights Reserved.</footer>
+  </body>
+</html>
